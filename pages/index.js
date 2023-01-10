@@ -41,12 +41,14 @@ const Home = () => {
       setRetry(0);
     }
 
+    const formatted = input.replace(/nik/,'nlogachev2023')
+
     const response = await fetch('/api/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'image/jpeg',
       },
-      body: JSON.stringify({ input }),
+      body: JSON.stringify({ formatted }),
     });
 
     const data = await response.json();
@@ -111,7 +113,7 @@ const Home = () => {
       </div>
       <div className="header-subtitle">
         <h2>
-          Turn me into anyone you want! Make sure you refer to me as "nlogachev2023" in the prompt
+          Turn me into anyone you want! Make sure you refer to me as "nik" in the prompt
         </h2>
       </div>
       <div className="prompt-container">
